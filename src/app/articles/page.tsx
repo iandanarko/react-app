@@ -1,15 +1,14 @@
-import { title } from "process"
 import { articles } from "../lib/placeholder-data"
 import Image from 'next/image'
 
 export default function Page() {
+  const divider = "/////////////////////////"
   return (
     <div className="flex flex-col justify-center items-center">
       <h1 className="py-8 p-3 font-bold text-2xl md:text-4xl max-w-2xl text-center">
         We release interesting articles about technology
       </h1>
-      <div className="text-[#D9D9D9] tracking-widest">/////////////////////////</div>
-      
+      <div className="text-[#D9D9D9] tracking-widest">{divider}</div>
       <div>
         {articles.map((a) => (
           <div key={a.id} className="flex items-center md:p-2 max-w-2xl">
