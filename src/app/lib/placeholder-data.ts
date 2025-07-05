@@ -233,4 +233,25 @@ const invoicesTable = [
   }
 ]
 
-export { users, customers, invoices, revenue, latestInvoices, invoicesTable };
+const articles = [
+  {
+    id: 1,
+    title: "Unlocking the Power of Cloud Computing: A Guide to Scalable Solutions",
+    date: new Date("2024-11-12"),
+    image: "/articles/photo_1.png"
+  },
+  {
+    id: 2,
+    title: "The Future of AI: How Machine Learning is Revolutionizing Industries",
+    date: new Date("2024-11-12"),
+    image: "/articles/photo_2.png"
+  },
+  {
+    id: 3,
+    title: "The Impact of 5G on Business: How Faster Networks are Transforming the Way We Work",
+    date: new Date("2024-11-12"),
+    image: "/articles/photo_3.png"
+  }
+]
+
+export { users, customers, invoices, revenue, latestInvoices, invoicesTable, articles };
