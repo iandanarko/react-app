@@ -2,7 +2,7 @@
 import "./styles.css";
 import { useState } from 'react';
 
-function Square({ value, onSquareClick  }: {value: string, onSquareClick: any}) {
+function Square({ value, onSquareClick  }: {value: string, onSquareClick: () => void}) {
   return <button className="square" onClick={onSquareClick}>{value}</button>;
 }
 
@@ -29,7 +29,7 @@ function calculateWinner(squares: Array<string>) {
 function Board({ xIsNext, squares, onPlay }: {
   xIsNext: boolean,
   squares: Array<string>,
-  onPlay: any
+  onPlay: (nextSquares: Array<string>) => void,
 }) {
   function handleClick(i: number) {
     if (calculateWinner(squares) || squares[i]) {
@@ -81,9 +81,9 @@ export default function Game() {
   const currentSquares = history[history.length - 1];
 
   function handlePlay(nextSquares: Array<string>) {
-  const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
-  setHistory(nextHistory);
-  setCurrentMove(nextHistory.length - 1);
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    setHistory(nextHistory);
+    setCurrentMove(nextHistory.length - 1);
   }
 
   function jumpTo(nextMove: number) {

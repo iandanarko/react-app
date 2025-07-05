@@ -1,7 +1,7 @@
 'use client'
 
 import './styles.css';
-import { useState } from 'react';
+import { Dispatch, JSX, SetStateAction, useState } from 'react';
 
 class Product {
   name: string
@@ -42,7 +42,7 @@ function ProductRow({ product }: { product: Product }) {
 }
 
 function ProductTable({ products, filterText, inStockOnly }: { products: Product[], filterText: string, inStockOnly: boolean}) {
-  const rows: any[] = [];
+  const rows: JSX.Element[] = [];
   let lastCategory: string | null = null;
 
   products.forEach((product) => {
@@ -85,7 +85,12 @@ function ProductTable({ products, filterText, inStockOnly }: { products: Product
 }
 
 function SearchBar({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }: 
-  {filterText: string, inStockOnly: boolean, onFilterTextChange: any, onInStockOnlyChange: any}){
+  {
+    filterText: string, 
+    inStockOnly: boolean, 
+    onFilterTextChange: Dispatch<SetStateAction<string>>, 
+    onInStockOnlyChange: Dispatch<SetStateAction<boolean>>
+  }){
   return (
     <form>
       <input 

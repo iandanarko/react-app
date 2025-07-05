@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Page() {
   return (
     <div className="min-h-screen flex items-start justify-center bg-gray-100 p-10">
@@ -13,7 +15,7 @@ export default function Page() {
             </a>
           </p>
           <div className="mt-8 border-2 border-black-500 p-4 rounded-lg">
-            <img
+            <Image
               src="image-qr-code.png"
               alt="QR Code"
               className="w-60 mx-auto"

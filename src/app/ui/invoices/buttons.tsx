@@ -13,10 +13,13 @@ export function CreateInvoice() {
   );
 }
 
-export function UpdateInvoice({ id }: { id: string }) {
+export function UpdateInvoice(
+  { id }: { id: string }
+) {
+  const linkAddr = `/dashboard/invoices/${id}`
   return (
     <Link
-      href="/dashboard/invoices"
+      href={linkAddr}
       className="rounded-md border p-2 hover:bg-gray-100"
     >
       <PencilIcon className="w-5" />
@@ -24,7 +27,11 @@ export function UpdateInvoice({ id }: { id: string }) {
   );
 }
 
-export function DeleteInvoice({ id }: { id: string }) {
+export function DeleteInvoice(
+  { id }: { id: string }
+) {
+  const linkAddr = `/dashboard/invoices/${id}`
+  console.log(linkAddr)
   return (
     <>
       <button type="submit" className="rounded-md border p-2 hover:bg-gray-100">

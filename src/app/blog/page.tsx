@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function Page() {
 
   return (
     <div className="min-h-screen flex items-start justify-center bg-neutral-100 p-10 shadow-xl">
       <div className="bg-white max-w-md min-h-1/2 rounded-md p-5">
-        <img 
+        <Image 
           src="Cactus.jpg"
           alt="Flower"
           className="w-100 mx-auto"

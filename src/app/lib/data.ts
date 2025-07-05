@@ -42,13 +42,13 @@ export async function fetchFilteredInvoices(
   query: string,
   currentPage: number,
 ) {
-  let invoices = invoicesTable
-  if (query.length != 0) {
+  const invoices = invoicesTable
+  if (query.length != 0 && currentPage != 0) {
     invoices.filter(i => i.name == query)
   }
   return invoices;
 }
 
 export async function fetchInvoicesPages(query: string) {
-  return 2;
+  return Number(query) || 2;
 }
